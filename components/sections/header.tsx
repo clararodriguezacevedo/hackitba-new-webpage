@@ -41,7 +41,9 @@ export function Header({ translations, locale }: HeaderProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href={`/${locale}`} className="flex items-center gap-2">
-            <span className="font-pixel text-2xl md:text-3xl text-brand-orange neon-glow-orange">{"<Hk"}</span>
+            <span className="font-pixel text-2xl md:text-3xl text-brand-orange neon-glow-orange">
+              <img src="/images/hackitba-icon.png" alt="" />
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

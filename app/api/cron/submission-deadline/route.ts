@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 
     const projectsSnapshot = await adminDb().collection("projects").get()
     const projectsByTeam = new Map()
-    projectsSnapshot.docs.forEach((doc) => {
+    projectsSnapshot.docs.forEach((doc: { data: () => { (): any; new(): any; teamId: any }; id: any }) => {
       projectsByTeam.set(doc.data().teamId, { id: doc.id, ...doc.data() })
     })
 

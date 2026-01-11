@@ -15,8 +15,7 @@
     },
     "hero": {
       "title": "HACKITBA",
-      "subtitle": "By Computer Society ITBA",
-      "description": "36 hours of non-stop intense development. Networking and mentoring from minute one. Get to know your team."
+      "subtitle": "By Computer Society ITBA"
     },
     "stats": {
       "categories": "Categories",
@@ -135,12 +134,11 @@
     },
     "hero": {
       "title": "HACKITBA",
-      "subtitle": "By Computer Society ITBA",
-      "description": "36 horas de desarrollo intenso sin parar. Networking y mentoría desde el minuto uno. Conoce a tu equipo."
+      "subtitle": "By Computer Society ITBA"
     },
     "stats": {
       "categories": "Categorías",
-      "hoursOfCoding": "Horas\nDe código",
+      "hoursOfCoding": "Horas\nde código",
       "participants": "Participantes"
     },
     "event": {

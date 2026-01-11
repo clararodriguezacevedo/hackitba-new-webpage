@@ -4,17 +4,28 @@ import localFont from "next/font/local"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./tokens.css"
-import "./globals.css" // Import globals.css here
+import "./globals.css"
 
-const cofoSansPixel = localFont({
-  src: "./fonts/dogica.ttf",
+const pixelFont = localFont({
+  src: [
+    {
+      path: "./fonts/dogica.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/dogicabold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-pixel",
   display: "swap",
 })
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-inter",
   display: "swap",
 })
 
@@ -37,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${cofoSansPixel.variable} ${inter.variable}`}>
+    <html lang="es" className={`${pixelFont.variable} ${inter.variable}`}>
       <body className="antialiased">
         {children}
         <Analytics />

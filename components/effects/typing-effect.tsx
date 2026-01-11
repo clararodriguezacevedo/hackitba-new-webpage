@@ -21,7 +21,7 @@ export function TypingEffect({
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const typingSpeed = speed === "slow" ? 100 : 30
+  const typingSpeed = speed === "slow" ? 100 : 0.001
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -43,7 +43,11 @@ export function TypingEffect({
 
   if (direction === "vertical") {
     return (
-      <div className={cn("overflow-hidden", className)}>
+      <div className={cn(
+        "overflow-hidden",
+        className
+      )}
+      >
         {displayText.split("\n").map((line, i) => (
           <div key={i} className="whitespace-pre">
             {line}
