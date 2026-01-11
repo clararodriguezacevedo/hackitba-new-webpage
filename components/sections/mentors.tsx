@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { GlassCard } from "@/components/ui/glass-card"
 import { Linkedin, Mail, Github } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface MentorsProps {
   translations: any
@@ -23,8 +24,8 @@ interface Mentor {
 
 const mentors: Mentor[] = Array.from({ length: 10 }, (_, i) => ({
   name: "Matias Pinero",
-  title: "IDL Inversiones",
-  company: "IDL Inversiones",
+  title: "IT Manager",
+  company: "IOL Inversiones",
   bio: "Suspendisse vitae tellus, sollicitudin id iaculis id, auctor non neque. Lorem ipsum dolor, Nunc in leo nulla. Mauris integer mattis neque non ultrices. Ut occaecat veneonistis ligula id gravidas. Inveamus et malesuada sollicitudin felis. Duis vivam sapittis justo, quis tristique.",
   avatar: "/placeholder.svg?height=200&width=200",
   linkedin: "https://linkedin.com",
@@ -45,12 +46,12 @@ export function Mentors({ translations }: MentorsProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto ">
           {mentors.map((mentor, index) => (
             <button
               key={index}
               onClick={() => setSelectedMentor(mentor)}
-              className="group cursor-pointer transition-transform hover:scale-105"
+              className={cn("group cursor-pointer transition-transform hover:scale-105", index >= mentors.length - 5 && "md:translate-x-[calc(50%+3px)]")}
             >
               <GlassCard neonOnHover neonColor="cyan" className="p-4">
                 <div className="aspect-square relative mb-3 rounded-lg overflow-hidden">
@@ -62,6 +63,7 @@ export function Mentors({ translations }: MentorsProps) {
             </button>
           ))}
         </div>
+
       </div>
 
       <Dialog open={!!selectedMentor} onOpenChange={() => setSelectedMentor(null)}>

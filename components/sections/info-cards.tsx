@@ -1,5 +1,6 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import Image from "next/image"
+import { Timeline } from "./timeline"
 
 interface InfoCardsProps {
   translations: any
@@ -7,7 +8,14 @@ interface InfoCardsProps {
 
 export function InfoCards({ translations }: InfoCardsProps) {
   return (
-    <section id="info" className="py-20 px-4">
+    <section
+      id="info"
+      className="py-20 px-4"
+      style={{
+        background: "linear-gradient(to bottom, var(--color-brand-navy) 50%, var(--color-brand-dark-orange))"
+      }}
+    >
+      <Timeline translations={translations} />
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <GlassCard neonOnHover neonColor="orange">

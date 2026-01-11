@@ -26,7 +26,7 @@ export function Timeline({ translations }: TimelineProps) {
   ]
 
   return (
-    <section id="timeline" className="py-20 px-4 overflow-x-hidden">
+    <section id="timeline" className="pb-40 py-20 px-4 overflow-x-hidden">
       <div className="container mx-auto">
         <h2 className="font-pixel text-3xl md:text-5xl text-center text-brand-orange mb-16">
           <NeonGlow color="orange">{translations.timeline.title}</NeonGlow>
@@ -52,7 +52,7 @@ export function Timeline({ translations }: TimelineProps) {
             </div>
           </div>
 
-          <div className="h-2 bg-brand-orange w-full rounded-xl my-0 neon-border-orange relative z-10" />
+          <div className="h-2 bg-brand-yellow w-full rounded-xl my-0 neon-border-orange relative z-10" />
 
           <div className="grid grid-cols-4 w-full gap-4">
             {/* Bottom Row */}
@@ -81,7 +81,7 @@ export function Timeline({ translations }: TimelineProps) {
             {events.map((event, index) => (
               <div key={index} className="relative">
                 <div className="absolute -left-[41px] top-6 w-4 h-4 rounded-full bg-brand-orange neon-border-orange" />
-                <GlassCard neonOnHover neonColor="orange">
+                <GlassCard neonOnHover neonColor="yellow">
                   <h3 className="font-pixel text-xl text-brand-yellow mb-3">{event.title}</h3>
                   <p className="text-brand-cyan leading-relaxed">{event.description}</p>
                 </GlassCard>
