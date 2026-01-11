@@ -1,58 +1,68 @@
 "use client"
 
 import type React from "react"
-
 import { cn } from "@/lib/utils"
-import { type HTMLAttributes, useState } from "react"
+import { type HTMLAttributes, useRef } from "react"
 
 export interface GlassCardProps extends HTMLAttributes<HTMLDivElement> {
   neonOnHover?: boolean
   neonColor?: "cyan" | "orange" | "yellow"
 }
 
-export function GlassCard({ className, children, neonOnHover = false, neonColor = "cyan", ...props }: GlassCardProps) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isHovered, setIsHovered] = useState(false)
+export function GlassCard({
+  className,
+  children,
+  neonOnHover = false,
+  neonColor = "cyan",
+  ...props
+}: GlassCardProps) {
+  const ref = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!neonOnHover) return
+    const el = ref.current
+    if (!el) return
 
-    const rect = e.currentTarget.getBoundingClientRect()
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    })
+    const rect = el.getBoundingClientRect()
+
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+
+    const angle =
+      Math.atan2(
+        e.clientY - (rect.top + rect.height / 2),
+        e.clientX - (rect.left + rect.width / 2),
+      ) *
+      (180 / Math.PI) +
+      90
+
+    el.style.setProperty("--glare-x", `${x}%`)
+    el.style.setProperty("--glare-y", `${y}%`)
+    el.style.setProperty("--glare-angle", `${angle}deg`)
   }
 
-  const neonColorMap = {
-    cyan: "var(--color-brand-cyan)",
-    orange: "var(--color-brand-orange)",
-    yellow: "var(--color-brand-yellow)",
+  const handleMouseLeave = () => {
+    const el = ref.current
+    if (!el) return
+
+    el.style.setProperty("--glare-x", "50%")
+    el.style.setProperty("--glare-y", "50%")
+    el.style.setProperty("--glare-angle", "135deg")
   }
 
   return (
     <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className={cn(
-        "glass-effect rounded-lg p-6 relative",
-        "transition-all duration-200",
-        neonOnHover && "hover:border-opacity-50",
+        "relative rounded-lg p-6 transition-transform duration-200",
+        "glass-effect",
+        neonOnHover && `neon-border-${neonColor}`,
         className,
       )}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       {...props}
     >
-      {neonOnHover && isHovered && (
-        <div
-          className="absolute inset-0 rounded-lg pointer-events-none"
-          style={{
-            background: `radial-gradient(circle 150px at ${mousePosition.x}px ${mousePosition.y}px, ${neonColorMap[neonColor]}20, transparent)`,
-            boxShadow: `0 0 20px ${neonColorMap[neonColor]}40`,
-          }}
-        />
-      )}
-      <div className="relative z-10">{children}</div>
+      {children}
     </div>
   )
 }

@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
+/* =========================================================
+   ROOT DESIGN TOKENS
+   ========================================================= */
 :root {
-  /* HackITBA Brand Colors */
+  /* Brand colors */
   --color-brand-yellow: #fad399;
   --color-brand-cyan: #afeff3;
   --color-brand-orange: #ef802f;
@@ -19,14 +22,14 @@
   --accent-foreground: var(--color-brand-navy);
   --muted: #1e2642;
   --muted-foreground: #8a91a8;
-  --border: rgba(175, 239, 243, 0.2);
-  --card: rgba(30, 38, 66, 0.6);
+  --border: rgba(175, 239, 243, 0.18);
+  --card: rgba(30, 38, 66, 0.45);
   --card-foreground: var(--color-brand-cyan);
 
   /* Radius */
   --radius: 0.5rem;
 
-  /* Neon glow colors */
+  /* Neon */
   --neon-cyan: var(--color-brand-cyan);
   --neon-orange: var(--color-brand-orange);
   --neon-yellow: var(--color-brand-yellow);
@@ -46,6 +49,9 @@
   --transition-slow: 250ms ease-in-out;
 }
 
+/* =========================================================
+   TAILWIND THEME TOKENS
+   ========================================================= */
 @theme inline {
 
   --color-brand-yellow: #fad399;
@@ -74,18 +80,22 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* =========================================================
+   BASE STYLES
+   ========================================================= */
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
-
 }
 
-/* Neon glow effect utilities */
+/* =========================================================
+   NEON TEXT
+   ========================================================= */
 @layer utilities {
   .neon-glow-cyan {
     text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
@@ -107,14 +117,69 @@
     box-shadow: 0 0 5px var(--neon-orange), 0 0 10px var(--neon-orange), inset 0 0 5px var(--neon-orange);
   }
 
-  .glass-effect {
-    background: rgba(30, 38, 66, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(175, 239, 243, 0.2);
+  /* =========================================================
+   GLASS NEOMORPHISM
+   ========================================================= */
+  @layer utilities {
+    .glass-effect {
+      position: relative;
+      border-radius: var(--radius-lg);
+
+      /* FILL */
+      background:
+        linear-gradient(-32deg,
+          rgba(20, 25, 45, 0.9),
+          rgba(20, 25, 45, 0.6));
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      /* Needed for gradient stroke */
+      isolation: isolate;
+    }
+
+    .glass-effect::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+
+      /* STROKE (dynamic angle) */
+      background:
+        linear-gradient(var(--glare-angle, 135deg),
+          #afeff3 0%,
+          #5a7986 45%,
+          #14192d 100%);
+
+      /* Mask so it's only a border */
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glass-effect::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
   }
 
-  .text-balance {
-    text-wrap: balance;
+  /* =========================================================
+   TEXT BALANCE
+   ========================================================= */
+  @layer utilities {
+    .text-balance {
+      text-wrap: balance;
+    }
   }
 }
