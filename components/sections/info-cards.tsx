@@ -50,7 +50,7 @@ export function InfoCards({ translations }: InfoCardsProps) {
 
             <div className="space-y-4">
               <div className="aspect-video relative rounded-lg overflow-hidden">
-                <Image src="/images/image.png" alt="Location Map" fill className="object-cover" />
+                <iframe width="520" height="400" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Iguaz%C3%BA%20341%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires+(ITBA%20Sede%20Rectorado)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.acadoo.de/'>Acadoo</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=dff7eb8e12cb577438183b02f7a5de8c27883b84'></script>
               </div>
 
               <div className="text-center space-y-2">

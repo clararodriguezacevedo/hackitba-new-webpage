@@ -22,7 +22,7 @@ interface Mentor {
   github?: string
 }
 
-const mentors: Mentor[] = Array.from({ length: 10 }, (_, i) => ({
+const mentors: Mentor[] = Array.from({ length: 9 }, (_, i) => ({
   name: "Matias Pinero",
   title: "IT Manager",
   company: "IOL Inversiones",
@@ -51,15 +51,15 @@ export function Mentors({ translations }: MentorsProps) {
             <button
               key={index}
               onClick={() => setSelectedMentor(mentor)}
-              className={cn("group cursor-pointer transition-transform hover:scale-105", index >= mentors.length - 5 && "md:translate-x-[calc(50%+3px)]")}
+              className={cn("group cursor-pointer transition-transform hover:scale-105", index >= mentors.length - mentors.length % 5 && "md:translate-x-[calc(50%+3px)]")}
             >
-              <GlassCard neonOnHover neonColor="cyan" className="p-4">
+              <div className="p-4">
                 <div className="aspect-square relative mb-3 rounded-lg overflow-hidden">
                   <Image src={mentor.avatar || "/placeholder.svg"} alt={mentor.name} fill className="object-cover" />
                 </div>
                 <p className="font-pixel text-xs text-brand-cyan text-center">{mentor.name}</p>
                 <p className="font-mono text-xs text-brand-cyan/60 text-center mt-1">{mentor.company}</p>
-              </GlassCard>
+              </div>
             </button>
           ))}
         </div>

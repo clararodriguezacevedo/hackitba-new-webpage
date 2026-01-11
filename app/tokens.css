@@ -40,10 +40,6 @@
   --spacing-2xl: 4rem;
   --spacing-3xl: 6rem;
 
-  /* Use system monospace font instead of custom pixel font */
-  --font-pixel: ui-monospace, "Courier New", monospace;
-  --font-body: "Inter", system-ui, sans-serif;
-
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
   --transition-base: 200ms ease-in-out;
@@ -51,9 +47,6 @@
 }
 
 @theme inline {
-  /* Use system monospace font instead of custom pixel font */
-  --font-pixel: ui-monospace, "Courier New", monospace;
-  --font-body: "Inter", "Inter Fallback", system-ui, sans-serif;
 
   --color-brand-yellow: #fad399;
   --color-brand-cyan: #afeff3;
@@ -87,17 +80,9 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-pixel;
-  }
 }
 
 /* Neon glow effect utilities */

@@ -34,7 +34,7 @@ export function Header({ translations, locale }: HeaderProps) {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "absolute top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled ? "glass-effect border-b border-brand-cyan/20" : "bg-transparent",
       )}
     >
@@ -51,18 +51,19 @@ export function Header({ translations, locale }: HeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-pixel text-sm text-brand-cyan hover:neon-glow-cyan transition-all duration-200"
+                className="font-pixel text-sm text-brand-yellow hover:neon-glow-yellow transition-all duration-200"
               >
                 {link.label}
               </Link>
             ))}
+            <div className="hidden md:block">
+              <PixelButton asChild variant="outline" size="md">
+                <Link href={`/${locale}/auth/signup`}>{translations.nav.signUp}</Link>
+              </PixelButton>
+            </div>
           </nav>
 
-          <div className="hidden md:block">
-            <PixelButton asChild variant="outline" size="md">
-              <Link href={`/${locale}/auth/signup`}>{translations.nav.signUp}</Link>
-            </PixelButton>
-          </div>
+
 
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-brand-cyan p-2">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
