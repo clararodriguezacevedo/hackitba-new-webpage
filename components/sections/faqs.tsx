@@ -37,11 +37,11 @@ export function FAQs({ translations }: FAQsProps) {
   return (
     <section id="faqs" className="py-20 px-4">
       <div className="container mx-auto max-w-3xl">
-        <div className="text-center mb-12">
-          <p className="font-mono text-sm text-brand-cyan mb-2">{translations.faqs.endpoint}</p>
-          <h2 className="font-pixel text-3xl md:text-5xl text-brand-orange neon-glow-orange">
-            {translations.faqs.title}
-          </h2>
+        <div className="flex flex-col items-center mb-12">
+          <div>
+            <p className="font-pixel text-md text-brand-yellow mb-2">GET</p>
+            <p className="font-pixel text-lg text-brand-yellow">{translations.faqs.endpoint}</p>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -49,24 +49,18 @@ export function FAQs({ translations }: FAQsProps) {
             <button
               key={index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full text-left glass-effect rounded-lg p-6 hover:border-brand-cyan/40 transition-all group"
+              className="cursor-pointer w-full text-left glass-effect rounded-lg p-6 hover:border-brand-cyan/40 transition-all group"
             >
               <div className="flex items-center justify-between gap-4">
-                <h3 className="font-pixel text-lg text-brand-cyan group-hover:neon-glow-cyan transition-all">
+                <h3 className="font-pixel text-sm text-brand-cyan group-hover:neon-glow-cyan transition-all">
                   "{translations.faqs.question}": "{translations.faqs.answer}"
                 </h3>
-                <ChevronDown
-                  className={cn(
-                    "text-brand-cyan transition-transform flex-shrink-0",
-                    openIndex === index && "rotate-180",
-                  )}
-                  size={24}
-                />
+                <img src="/images/flecha-abajo.png" className={cn(openIndex === index ? "rotate-180" : "", "h-6 transition-all")} alt="arrow-down" />
               </div>
 
               {openIndex === index && (
                 <div className="mt-4 pt-4 border-t border-brand-cyan/20">
-                  <p className="text-brand-cyan/80 leading-relaxed">{faq.answer}</p>
+                  <p className="opacity-60 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </button>

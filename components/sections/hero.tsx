@@ -27,9 +27,9 @@ export function Hero({ translations }: HeroProps) {
         />
       </div>
 
-      <div className="relative z-10 text-center space-y-8 max-w-4xl">
+      <div className="relative z-10 text-center space-y-8 max-w-4xl flex flex-col items-center">
         <div>
-          <h1 className="font-pixel text-5xl md:text-7xl lg:text-8xl mb-4">
+          <h1 className="font-pixel text-3xl md:text-5xl lg:text-6xl mb-4 mx-auto max-w-2xl">
             <NeonGlow color="orange" flickering>
               {/* <TypingEffect
                 text={translations.hero.title}

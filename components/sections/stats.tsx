@@ -73,7 +73,7 @@ export function Stats({ translations }: StatsProps) {
   return (
     <section id="stats" ref={sectionRef} className="py-20 px-4">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
           <div className="text-center">
             <div className="font-pixel text-6xl md:text-7xl text-brand-yellow neon-glow-orange mb-4">
               <NeonGlow flickering color="orange">
@@ -102,8 +102,8 @@ export function Stats({ translations }: StatsProps) {
           </div>
         </div>
 
-        <div className="mt-16 text-center space-y-4 max-w-xl mx-auto">
-          <p className="font-pixel text-xl md:text-2xl text-brand-yellow">{translations.event.location}</p>
+        <div className="mt-16 text-center max-w-xl mx-auto">
+          <p className="font-pixel text-lg text-brand-yellow">{translations.event.location}</p>
           <p className="font-pixel text-lg text-brand-yellow">{translations.event.dates}</p>
           <p className="font-pixel text-lg text-brand-yellow">{translations.event.free}</p>
         </div>

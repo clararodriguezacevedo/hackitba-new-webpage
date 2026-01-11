@@ -80,7 +80,7 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
-      <div className="absolute inset-0 opacity-5 font-mono text-xs text-brand-cyan leading-relaxed overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 opacity-5 text-xs text-brand-cyan leading-relaxed overflow-hidden pointer-events-none">
         {Array.from({ length: 50 }, (_, i) => (
           <div key={i}>
             {Array.from({ length: 100 }, () => String.fromCharCode(33 + Math.floor(Math.random() * 94))).join("")}
@@ -93,7 +93,7 @@ export default function SignupPage() {
           <h1 className="font-pixel text-4xl md:text-5xl mb-2">
             <NeonGlow color="orange">Sign Up</NeonGlow>
           </h1>
-          <p className="text-brand-cyan font-mono text-sm">POST /auth/signup</p>
+          <p className="text-brand-cyan text-sm">POST /auth/signup</p>
         </div>
 
         <GlassCard neonOnHover neonColor="cyan">

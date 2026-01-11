@@ -112,7 +112,7 @@ export default function JuradoDashboard() {
                       <div className="flex items-start justify-between">
                         <div>
                           <h4 className="font-pixel text-lg text-brand-yellow">{project.title}</h4>
-                          <p className="text-brand-cyan/60 text-xs font-mono">{project.teamId}</p>
+                          <p className="text-brand-cyan/60 text-xs">{project.teamId}</p>
                         </div>
                         {hasScored && (
                           <span className="text-xs font-pixel text-green-400 border border-green-400/30 px-2 py-1 rounded">

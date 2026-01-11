@@ -51,7 +51,7 @@ export function Header({ translations, locale }: HeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-pixel text-sm text-brand-yellow hover:neon-glow-orange transition-all duration-200"
+                className="font-pixel text-sm text-brand-yellow neon-glow-orange hover:neon-glow-orange transition-all duration-200"
               >
                 {link.label}
               </Link>

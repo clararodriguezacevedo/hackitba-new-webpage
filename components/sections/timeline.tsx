@@ -26,65 +26,62 @@ export function Timeline({ translations }: TimelineProps) {
   ]
 
   return (
-    <section id="timeline" className="pb-40 py-20 px-4 overflow-x-hidden">
+    <section id="timeline" className="pb-40 md:px-40 overflow-x-hidden">
       <div className="container mx-auto">
-        <h2 className="font-pixel text-3xl md:text-5xl text-center text-brand-orange mb-16">
-          <NeonGlow color="orange">{translations.timeline.title}</NeonGlow>
-        </h2>
 
         {/* Desktop View */}
-        <div className="hidden lg:flex flex-col items-center max-w-7xl mx-auto">
+        <div className="hidden lg:flex flex-col items-center max-w-4xl mx-auto">
           <div className="grid grid-cols-4 w-full gap-4">
             {/* Top Row */}
             <div className="flex flex-col justify-between h-full">
-              <GlassCard neonOnHover neonColor="orange" className="mb-4">
-                <h3 className="font-pixel text-lg text-brand-yellow mb-2">{events[0].title}</h3>
-                <p className="text-brand-cyan text-sm">{events[0].description}</p>
-              </GlassCard>
-              <img className="h-20 self-center" src="/images/roadmap_branch.svg" alt="" />
+              <div className="mb-4">
+                <h3 className="font-pixel text-md text-brand-yellow mb-2">{events[0].title}</h3>
+                <p className="text-md">{events[0].description}</p>
+              </div>
+              <div className="h-8 w-8 self-center neon-border-orange bg-brand-yellow translate-y-4 z-50"></div>
             </div>
             <div className="col-start-3 flex flex-col justify-between h-full">
-              <GlassCard neonOnHover neonColor="orange" className="mb-4">
-                <h3 className="font-pixel text-lg text-brand-yellow mb-2">{events[2].title}</h3>
-                <p className="text-brand-cyan text-sm">{events[2].description}</p>
-              </GlassCard>
-              <img className="h-20 self-center" src="/images/roadmap_branch.svg" alt="" />
+              <div className="mb-4">
+                <h3 className="font-pixel text-md text-brand-yellow mb-2">{events[2].title}</h3>
+                <p className="text-md">{events[2].description}</p>
+              </div>
+              <div className="h-8 w-8 self-center neon-border-orange bg-brand-yellow translate-y-4 z-50"></div>
             </div>
           </div>
 
-          <div className="h-2 bg-brand-yellow w-full rounded-xl my-0 neon-border-orange relative z-10" />
+          <div className="h-1 bg-brand-yellow w-full my-0 neon-border-orange relative z-10" />
 
           <div className="grid grid-cols-4 w-full gap-4">
             {/* Bottom Row */}
             <div className="col-start-2 flex flex-col justify-start h-full">
-              <img className="h-20 self-center scale-y-[-1]" src="/images/roadmap_branch.svg" alt="" />
-              <GlassCard neonOnHover neonColor="orange" className="mt-4">
-                <h3 className="font-pixel text-lg text-brand-yellow mb-2">{events[1].title}</h3>
-                <p className="text-brand-cyan text-sm">{events[1].description}</p>
-              </GlassCard>
+              <div className="h-8 w-8 self-center neon-border-orange bg-brand-yellow -translate-y-5 z-50"></div>
+              <div className="mt-4">
+                <h3 className="font-pixel text-md text-brand-yellow mb-2">{events[1].title}</h3>
+                <p className="text-md">{events[1].description}</p>
+              </div>
             </div>
             <div className="col-start-4 flex flex-col justify-start h-full">
-              <img className="h-20 self-center scale-y-[-1]" src="/images/roadmap_branch.svg" alt="" />
-              <GlassCard neonOnHover neonColor="orange" className="mt-4">
-                <h3 className="font-pixel text-lg text-brand-yellow mb-2">{events[3].title}</h3>
-                <p className="text-brand-cyan text-sm">{events[3].description}</p>
-              </GlassCard>
+              <div className="h-8 w-8 self-center neon-border-orange bg-brand-yellow -translate-y-5 z-50"></div>
+              <div className="mt-4">
+                <h3 className="font-pixel text-md text-brand-yellow mb-2">{events[3].title}</h3>
+                <p className="text-md">{events[3].description}</p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Mobile View */}
         <div className="lg:hidden relative">
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-brand-orange/30" />
+          <div className="absolute left-4 top-0 bottom-0 w-1 bg-brand-yellow neon-border-orange" />
 
           <div className="space-y-12 pl-12">
             {events.map((event, index) => (
               <div key={index} className="relative">
-                <div className="absolute -left-[41px] top-6 w-4 h-4 rounded-full bg-brand-orange neon-border-orange" />
-                <GlassCard neonOnHover neonColor="yellow">
-                  <h3 className="font-pixel text-xl text-brand-yellow mb-3">{event.title}</h3>
-                  <p className="text-brand-cyan leading-relaxed">{event.description}</p>
-                </GlassCard>
+                <div className="absolute -left-[38px] top-6 w-4 h-4 bg-brand-yellow neon-border-orange" />
+                <div>
+                  <h3 className="font-pixel text-md text-brand-yellow mb-2">{event.title}</h3>
+                  <p className="text-md leading-relaxed">{event.description}</p>
+                </div>
               </div>
             ))}
           </div>

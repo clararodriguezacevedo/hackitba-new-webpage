@@ -72,7 +72,7 @@ export function Footer({ translations, locale }: FooterProps) {
           </div>
         </div>
 
-        <div className="text-center text-brand-cyan/60 text-sm font-mono pt-8 border-t border-brand-cyan/10">
+        <div className="text-center text-brand-cyan/60 text-sm pt-8 border-t border-brand-cyan/10">
           © 2026 Computer Society ITBA. All rights reserved.
         </div>
       </div>

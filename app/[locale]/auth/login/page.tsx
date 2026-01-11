@@ -37,7 +37,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="absolute inset-0 opacity-5 font-mono text-xs text-brand-cyan leading-relaxed overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 opacity-5 text-xs text-brand-cyan leading-relaxed overflow-hidden pointer-events-none">
         {Array.from({ length: 50 }, (_, i) => (
           <div key={i}>
             {Array.from({ length: 100 }, () => String.fromCharCode(33 + Math.floor(Math.random() * 94))).join("")}
@@ -50,7 +50,7 @@ export default function LoginPage() {
           <h1 className="font-pixel text-4xl md:text-5xl mb-2">
             <NeonGlow color="orange">Login</NeonGlow>
           </h1>
-          <p className="text-brand-cyan font-mono text-sm">POST /auth/login</p>
+          <p className="text-brand-cyan text-sm">POST /auth/login</p>
         </div>
 
         <GlassCard neonOnHover neonColor="cyan">

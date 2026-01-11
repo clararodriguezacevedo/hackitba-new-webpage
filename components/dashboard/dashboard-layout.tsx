@@ -61,7 +61,7 @@ export function DashboardLayout({ children, title }: DashboardLayoutProps) {
         <div className="border-t border-brand-cyan/20 pt-6">
           <div className="mb-4">
             <p className="text-brand-cyan text-sm">{user?.profile.name}</p>
-            <p className="text-brand-cyan/60 text-xs font-mono">{user?.email}</p>
+            <p className="text-brand-cyan/60 text-xs">{user?.email}</p>
             <p className="text-brand-yellow text-xs font-pixel mt-1">{user?.role.toUpperCase()}</p>
           </div>
 

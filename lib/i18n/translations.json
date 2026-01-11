@@ -63,16 +63,16 @@
     },
     "sponsors": {
       "title": "Sponsors",
-      "endpoint": "GET v2026/sponsors"
+      "endpoint": "v2026/sponsors"
     },
     "mentors": {
       "title": "Mentors",
-      "endpoint": "GET v2026/mentors",
+      "endpoint": "v2026/mentors",
       "modalTitle": "Mentor Details"
     },
     "categories": {
       "title": "Categories",
-      "endpoint": "GET v2026/categories",
+      "endpoint": "v2026/categories",
       "web3": "Web3",
       "ia": "IA",
       "gameDev": "GameDev"
@@ -92,15 +92,15 @@
       "computer": "Your computer"
     },
     "signup": {
+      "endpoint": "v2026/sign-up",
       "title": "Sign Up",
-      "subtitle": "POST v2026/sign-up",
       "participant": "Sign Up",
       "sponsor": "Sponsor",
       "mentor": "Mentor"
     },
     "faqs": {
       "title": "FAQs",
-      "endpoint": "GET v2026/faqs",
+      "endpoint": "v2026/faqs",
       "question": "Question",
       "answer": "Resume of the answer"
     },
@@ -111,7 +111,7 @@
     },
     "countdown": {
       "title": "Time Left",
-      "endpoint": "GET v2026/time-left",
+      "endpoint": "v2026/time-left",
       "days": "Days",
       "hours": "Hours",
       "minutes": "Minutes",
@@ -183,16 +183,16 @@
     },
     "sponsors": {
       "title": "Sponsors",
-      "endpoint": "GET v2026/sponsors"
+      "endpoint": "v2026/sponsors"
     },
     "mentors": {
       "title": "Mentores",
-      "endpoint": "GET v2026/mentors",
+      "endpoint": "v2026/mentors",
       "modalTitle": "Detalles del Mentor"
     },
     "categories": {
       "title": "Categorías",
-      "endpoint": "GET v2026/categories",
+      "endpoint": "v2026/categories",
       "web3": "Web3",
       "ia": "IA",
       "gameDev": "GameDev"
@@ -212,15 +212,15 @@
       "computer": "Tu computadora"
     },
     "signup": {
-      "title": "Inscribirse",
-      "subtitle": "POST v2026/sign-up",
-      "participant": "Inscribirse",
+      "endpoint": "v2026/sign-up",
+      "title": "Inscribite",
+      "participant": "Inscribite",
       "sponsor": "Sponsor",
       "mentor": "Mentor"
     },
     "faqs": {
       "title": "FAQs",
-      "endpoint": "GET v2026/faqs",
+      "endpoint": "v2026/faqs",
       "question": "Pregunta",
       "answer": "Resumen de la respuesta"
     },
@@ -231,7 +231,7 @@
     },
     "countdown": {
       "title": "Tiempo Restante",
-      "endpoint": "GET v2026/time-left",
+      "endpoint": "v2026/time-left",
       "days": "Días",
       "hours": "Horas",
       "minutes": "Minutos",

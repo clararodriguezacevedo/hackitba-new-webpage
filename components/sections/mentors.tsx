@@ -37,16 +37,16 @@ export function Mentors({ translations }: MentorsProps) {
   const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null)
 
   return (
-    <section id="mentors" className="py-20 px-4">
+    <section id="mentors" className="pb-20 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <p className="font-mono text-sm text-brand-cyan mb-2">{translations.mentors.endpoint}</p>
-          <h2 className="font-pixel text-3xl md:text-5xl text-brand-orange neon-glow-orange">
-            {translations.mentors.title}
-          </h2>
+        <div className="flex flex-col items-center mb-12">
+          <div>
+            <p className="font-pixel text-md text-brand-yellow mb-2">GET</p>
+            <p className="font-pixel text-lg text-brand-yellow">{translations.mentors.endpoint}</p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto ">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-2 max-w-4xl mx-auto ">
           {mentors.map((mentor, index) => (
             <button
               key={index}
@@ -58,7 +58,7 @@ export function Mentors({ translations }: MentorsProps) {
                   <Image src={mentor.avatar || "/placeholder.svg"} alt={mentor.name} fill className="object-cover" />
                 </div>
                 <p className="font-pixel text-xs text-brand-cyan text-center">{mentor.name}</p>
-                <p className="font-mono text-xs text-brand-cyan/60 text-center mt-1">{mentor.company}</p>
+                <p className="text-xs text-brand-cyan/60 text-center mt-1">{mentor.company}</p>
               </div>
             </button>
           ))}
@@ -67,12 +67,7 @@ export function Mentors({ translations }: MentorsProps) {
       </div>
 
       <Dialog open={!!selectedMentor} onOpenChange={() => setSelectedMentor(null)}>
-        <DialogContent className="glass-effect border-brand-cyan/30 max-w-2xl">
-          <DialogHeader>
-            <DialogTitle className="font-pixel text-2xl text-brand-orange">
-              {translations.mentors.modalTitle}
-            </DialogTitle>
-          </DialogHeader>
+        <DialogContent className="glass-effect max-w-2xl">
 
           {selectedMentor && (
             <div className="space-y-6">
@@ -86,15 +81,15 @@ export function Mentors({ translations }: MentorsProps) {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-pixel text-xl text-brand-yellow mb-1">{selectedMentor.name}</h3>
-                  <p className="text-brand-cyan mb-1">{selectedMentor.title}</p>
-                  <p className="font-mono text-sm text-brand-cyan/60">{selectedMentor.company}</p>
+                  <p className="font-pixel font-bold text-xs text-brand-yellow mb-2">{selectedMentor.name}</p>
+                  <p className="text-brand-yellow">"Rol": <span className="text-white">"{selectedMentor.title}"</span></p>
+                  <p className="text-brand-yellow">"Empresa": <span className="text-white">"{selectedMentor.company}"</span></p>
                 </div>
               </div>
 
-              <p className="text-brand-cyan leading-relaxed">{selectedMentor.bio}</p>
+              <p className="leading-relaxed">{selectedMentor.bio}</p>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center">
                 {selectedMentor.linkedin && (
                   <a
                     href={selectedMentor.linkedin}

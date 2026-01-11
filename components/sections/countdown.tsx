@@ -35,9 +35,9 @@ export function Countdown({ translations }: CountdownProps) {
 
     const wrapperRef = useRef<HTMLDivElement>(null)
     const [confettiSource, setConfettiSource] = useState({
-        x: 0,
-        y: 0,
-        w: 0,
+        x: 100,
+        y: -40,
+        w: 200,
         h: 0,
     })
     const [height, setHeight] = useState(0)
@@ -66,18 +66,19 @@ export function Countdown({ translations }: CountdownProps) {
     if (!isClient) return null
 
     return (
-        <section className="py-20 px-4 flex flex-col items-center gap-8 overflow-hidden">
+        <section className="py-20 px-4 flex flex-col items-center gap-8">
             {timeLeft ? (
-                <h3 className="mb-6 font-pixel text-brand-orange tracking-wider text-2xl md:text-4xl text-center">
-                    <NeonGlow color="orange">
-                        {translations.countdown.title}
-                    </NeonGlow>
-                </h3>
+                <div className="flex flex-col items-center mb-12">
+                    <div>
+                        <p className="font-pixel text-md text-brand-yellow mb-2">GET</p>
+                        <p className="font-pixel text-lg text-brand-yellow">{translations.countdown.endpoint}</p>
+                    </div>
+                </div>
             ) : (
                 <h3 className="text-brand-yellow font-pixel text-2xl">{translations.countdown.ended}</h3>
             )}
 
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12" ref={wrapperRef}>
+            <div ref={wrapperRef} className="flex justify-center gap-8 md:gap-12 px-4 origin-center scale-[0.8] sm:scale-[0.9] md:scale-100 transition-transform">
                 {!timeLeft && (
                     <Confetti
                         height={height}
@@ -91,7 +92,7 @@ export function Countdown({ translations }: CountdownProps) {
                 )}
 
                 <div className="text-center">
-                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow hover:text-brand-orange transition-colors duration-300">
+                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow transition-all duration-300">
                         <NeonGlow flickering color="orange">
                             {timeLeft ? timeLeft.days : "0"}
                         </NeonGlow>
@@ -100,7 +101,7 @@ export function Countdown({ translations }: CountdownProps) {
                 </div>
 
                 <div className="text-center">
-                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow hover:text-brand-orange transition-colors duration-300">
+                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow transition-colors duration-300">
                         <NeonGlow flickering color="orange">
                             {timeLeft ? timeLeft.hours : "0"}
                         </NeonGlow>
@@ -109,7 +110,7 @@ export function Countdown({ translations }: CountdownProps) {
                 </div>
 
                 <div className="text-center">
-                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow hover:text-brand-orange transition-colors duration-300">
+                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow transition-colors duration-300">
                         <NeonGlow flickering color="orange">
                             {timeLeft ? timeLeft.minutes : "0"}
                         </NeonGlow>
@@ -118,7 +119,7 @@ export function Countdown({ translations }: CountdownProps) {
                 </div>
 
                 <div className="text-center">
-                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow hover:text-brand-orange transition-colors duration-300">
+                    <p className="font-pixel text-4xl md:text-6xl text-brand-yellow transition-colors duration-300">
                         <NeonGlow flickering color="orange">
                             {timeLeft ? timeLeft.seconds : "0"}
                         </NeonGlow>
