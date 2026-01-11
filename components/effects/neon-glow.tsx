@@ -46,7 +46,7 @@ export function NeonGlow({ children, className, color = "cyan", flickering = fal
   const glowClass = `neon-glow-${color}`
 
   return (
-    <span className={cn("transition-opacity duration-75", isVisible ? glowClass : "opacity-80", className)}>
+    <span className={cn("transition-opacity duration-75", isVisible ? glowClass : "opacity-50", className)}>
       {children}
     </span>
   )

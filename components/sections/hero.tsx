@@ -18,8 +18,8 @@ export function Hero({ translations }: HeroProps) {
   }
 
   return (
-    <section className="[mask-image:linear-gradient(to_bottom,transparent,black,transparent)] relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-      <div className="absolute inset-4 opacity-10 font-pixel text-s text-brand-cyan leading-relaxed overflow-hidden pointer-events-none">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      <div className="[mask-image:linear-gradient(to_bottom,transparent,black,transparent)] absolute inset-4 opacity-10 font-pixel text-s text-brand-cyan leading-relaxed overflow-hidden pointer-events-none">
         <TypingEffect
           text={lorem.generateParagraphs(35)}
           speed="fast"
@@ -44,7 +44,9 @@ export function Hero({ translations }: HeroProps) {
       </div>
 
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <FloatingArrow onClick={scrollToNext} />
+        <NeonGlow color="cyan" flickering>
+          <FloatingArrow onClick={scrollToNext} />
+        </NeonGlow>
       </div>
     </section>
   )

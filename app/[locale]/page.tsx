@@ -20,6 +20,8 @@ interface PageProps {
   }>
 }
 
+import { Countdown } from "@/components/sections/countdown"
+
 export default async function Page({ params }: PageProps) {
   const { locale } = await params
   const translations = getTranslations(locale)
@@ -37,6 +39,7 @@ export default async function Page({ params }: PageProps) {
         <Mentors translations={translations} />
         <Categories translations={translations} />
         <WhatWeProvide translations={translations} />
+        <Countdown translations={translations} />
         <SignupSection translations={translations} locale={locale} />
         <FAQs translations={translations} />
       </main>
