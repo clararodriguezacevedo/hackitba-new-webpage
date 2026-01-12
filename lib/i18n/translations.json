@@ -106,8 +106,9 @@
     },
     "footer": {
       "menu": "Nav Menu",
-      "madeWith": "Made with love by Computer Society ITBA",
-      "socials": "Our socials"
+      "madeWith": "Made with 🧡 by Computer Society ITBA",
+      "socials": "Our socials",
+      "copyright": "© 2026 Computer Society ITBA. All rights reserved."
     },
     "countdown": {
       "title": "Time Left",
@@ -226,8 +227,9 @@
     },
     "footer": {
       "menu": "Nav Menu",
-      "madeWith": "Hecho con amor por Computer Society ITBA",
-      "socials": "Nuestras redes"
+      "madeWith": "Hecho con 🧡 por Computer Society ITBA",
+      "socials": "Nuestras redes",
+      "copyright": "© 2026 Computer Society ITBA. Todos los derechos reservados."
     },
     "countdown": {
       "title": "Tiempo Restante",

@@ -57,8 +57,8 @@ export function Mentors({ translations }: MentorsProps) {
                 <div className="aspect-square relative mb-3 rounded-lg overflow-hidden">
                   <Image src={mentor.avatar || "/placeholder.svg"} alt={mentor.name} fill className="object-cover" />
                 </div>
-                <p className="font-pixel text-xs text-brand-cyan text-center">{mentor.name}</p>
-                <p className="text-xs text-brand-cyan/60 text-center mt-1">{mentor.company}</p>
+                <p className="font-pixel text-xs text-brand-yellow text-center">{mentor.name}</p>
+                <p className="text-xs opacity-60 text-center mt-1">{mentor.company}</p>
               </div>
             </button>
           ))}

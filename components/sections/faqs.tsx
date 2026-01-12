@@ -49,10 +49,10 @@ export function FAQs({ translations }: FAQsProps) {
             <button
               key={index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="cursor-pointer w-full text-left glass-effect rounded-lg p-6 hover:border-brand-cyan/40 transition-all group"
+              className="cursor-pointer w-full text-left glass-effect rounded-lg p-6 transition-all group"
             >
               <div className="flex items-center justify-between gap-4">
-                <h3 className="font-pixel text-sm text-brand-cyan group-hover:neon-glow-cyan transition-all">
+                <h3 className="font-pixel text-xs hover:text-brand-cyan transition-all">
                   "{translations.faqs.question}": "{translations.faqs.answer}"
                 </h3>
                 <img src="/images/flecha-abajo.png" className={cn(openIndex === index ? "rotate-180" : "", "h-6 transition-all")} alt="arrow-down" />

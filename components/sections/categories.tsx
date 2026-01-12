@@ -75,10 +75,10 @@ export function Categories({ translations }: CategoriesProps) {
               >
                 <GlassCard className="h-full text-center">
                   <div className="flex flex-col items-center gap-4">
-                    <div className="w-20 h-20 flex items-center justify-center text-brand-yellow">
+                    <div className="w-20 h-20 flex items-center justify-center">
                       <IconComponent size={48} />
                     </div>
-                    <h3 className="font-pixel text-md text-brand-yellow">{category.name}</h3>
+                    <h3 className="font-pixel text-md">{category.name}</h3>
                   </div>
                 </GlassCard>
               </button>
